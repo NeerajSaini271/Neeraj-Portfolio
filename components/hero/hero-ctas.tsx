@@ -1,24 +1,21 @@
 "use client";
-
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, FileText } from "lucide-react";
 import { LayoutGroup, motion } from "motion/react";
 import Link from "next/link";
+import { useState } from "react";
 import type { ReactNode } from "react";
-
 import { ContactButton } from "@/components/contact/contact-button";
-
 const EASE = [0.22, 1, 0.36, 1] as const;
-
 export function HeroCtas(): ReactNode {
+  const [contactExpanded, setContactExpanded] = useState(false);
   return (
     <LayoutGroup>
       <motion.div
         layout
         transition={{ layout: { duration: 0.55, ease: EASE } }}
-        className="mt-2 flex flex-wrap items-center gap-3"
+        className="mt-2 grid min-h-25 grid-cols-[max-content_max-content_max-content] content-start items-center gap-3 max-sm:flex max-sm:flex-wrap"
       >
-        <ContactButton />
-
+        <ContactButton onExpandedChange={setContactExpanded} />
         <motion.div
           layout
           transition={{ layout: { duration: 0.55, ease: EASE } }}
@@ -33,6 +30,25 @@ export function HeroCtas(): ReactNode {
               aria-hidden="true"
             />
           </Link>
+        </motion.div>
+        <motion.div
+          layout="position"
+          transition={{ layout: { duration: 0.55, ease: EASE } }}
+          className={
+            contactExpanded
+              ? "col-start-2 row-start-2 justify-self-end max-sm:basis-full max-sm:justify-self-center"
+              : "col-start-3 row-start-1"
+          }
+        >
+          <a
+            href="/Neeraj-Kumar-Saini-Resume.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="border-foreground/5 focus-ring group bg-background text-foreground hover:bg-foreground/4 inline-flex cursor-pointer items-center gap-2 rounded-xl border px-5 py-2.5 text-sm font-medium shadow-2xl transition-colors"
+          >
+            View Resume
+            <FileText className="h-4 w-4" aria-hidden="true" />
+          </a>
         </motion.div>
       </motion.div>
     </LayoutGroup>

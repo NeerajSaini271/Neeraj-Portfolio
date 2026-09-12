@@ -1,17 +1,22 @@
 "use client";
-
 import { AnimatePresence, motion } from "motion/react";
 import { Check, Copy, Mail } from "lucide-react";
 import { useState } from "react";
 import type { ReactNode } from "react";
-
 const EMAIL = "neerajkhetrisaini@gmail.com";
 const EASE = [0.22, 1, 0.36, 1] as const;
-
-export function ContactButton(): ReactNode {
+type ContactButtonProps = {
+  onExpandedChange?: (expanded: boolean) => void;
+};
+export function ContactButton({
+  onExpandedChange,
+}: ContactButtonProps): ReactNode {
   const [open, setOpen] = useState(false);
   const [copied, setCopied] = useState(false);
-
+  const setExpanded = (expanded: boolean): void => {
+    setOpen(expanded);
+    onExpandedChange?.(expanded);
+  };
   const handleCopy = async (): Promise<void> => {
     try {
       await navigator.clipboard.writeText(EMAIL);
@@ -32,16 +37,19 @@ export function ContactButton(): ReactNode {
       document.body.removeChild(ta);
     }
   };
-
   return (
     <motion.button
       type="button"
       layout
       onClick={handleCopy}
-      onHoverStart={() => setOpen(true)}
-      onHoverEnd={() => setOpen(false)}
-      onFocus={() => setOpen(true)}
-      onBlur={() => setOpen(false)}
+      onHoverStart={() => setExpanded(true)}
+      onHoverEnd={() => setExpanded(false)}
+      onFocus={(event) => {
+        if (event.currentTarget.matches(":focus-visible")) {
+          setExpanded(true);
+        }
+      }}
+      onBlur={() => setExpanded(false)}
       aria-label={
         copied ? "Email copied" : open ? `Copy ${EMAIL}` : "Show email"
       }
