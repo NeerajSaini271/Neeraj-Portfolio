@@ -2,6 +2,23 @@
 
 Personal portfolio of **Neeraj Kumar Saini**, a MERN Stack Developer based in Rajasthan, India.
 
+**[Live Portfolio](https://neeraj-portfolio-gray.vercel.app)**
+
+<table>
+  <tr>
+    <td width="50%">
+      <a href="https://neeraj-portfolio-gray.vercel.app">
+        <img src="public/portfolio-dark.png" alt="Portfolio homepage in dark mode" />
+      </a>
+    </td>
+    <td width="50%">
+      <a href="https://neeraj-portfolio-gray.vercel.app">
+        <img src="public/portfolio-light.png" alt="Portfolio homepage in light mode" />
+      </a>
+    </td>
+  </tr>
+</table>
+
 ## Highlights
 
 - Responsive Next.js portfolio with light and dark themes
