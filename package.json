@@ -1,6 +1,6 @@
 {
-  "name": "rbp-portfolio-template",
-  "version": "0.1.0",
+  "name": "neeraj-portfolio",
+  "version": "1.0.0",
   "private": true,
   "scripts": {
     "dev": "next dev",
@@ -35,5 +35,6 @@
     "prettier-plugin-tailwindcss": "^0.7.2",
     "tailwindcss": "^4",
     "typescript": "^5"
-  }
+  },
+  "description": "Personal portfolio of Neeraj Kumar Saini, a MERN Stack Developer."
 }

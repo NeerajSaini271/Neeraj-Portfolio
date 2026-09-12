@@ -12,22 +12,16 @@ type Chip = {
 };
 
 const CHIPS: Chip[] = [
-  {
-    label: "Figma",
-    slug: "figma",
-    bg: "#1f1f1f",
-    fg: "#ffffff",
-    iconUrl: "https://svgl.app/library/figma.svg",
-  },
-  { label: "React", slug: "react", bg: "#1FB6CB", fg: "#ffffff" },
-  { label: "Next.js", slug: "nextdotjs", bg: "#1f1f1f", fg: "#ffffff" },
-  { label: "TypeScript", slug: "typescript", bg: "#2F74C0", fg: "#ffffff" },
-  { label: "shadcn/ui", slug: "shadcnui", bg: "#5b54ff", fg: "#ffffff" },
-  { label: "Cursor", slug: "cursor", bg: "#111111", fg: "#ffffff" },
-  { label: "GSAP", slug: "gsap", bg: "#0AE448", fg: "#0a0a0a" },
+  { label: "MongoDB", slug: "mongodb", bg: "#136149", fg: "#ffffff" },
+  { label: "Express.js", slug: "express", bg: "#222222", fg: "#ffffff" },
+  { label: "React", slug: "react", bg: "#149ECA", fg: "#ffffff" },
+  { label: "Node.js", slug: "nodedotjs", bg: "#3C873A", fg: "#ffffff" },
+  { label: "JavaScript", slug: "javascript", bg: "#F7DF1E", fg: "#111111" },
+  { label: "TypeScript", slug: "typescript", bg: "#3178C6", fg: "#ffffff" },
+  { label: "PostgreSQL", slug: "postgresql", bg: "#336791", fg: "#ffffff" },
+  { label: "Tailwind CSS", slug: "tailwindcss", bg: "#0F8FA9", fg: "#ffffff" },
   { label: "GitHub", slug: "github", bg: "#181717", fg: "#ffffff" },
-  { label: "Vercel", slug: "vercel", bg: "#0a0a0a", fg: "#ffffff" },
-  { label: "Tailwind CSS", slug: "tailwindcss", bg: "#2BBCF5", fg: "#ffffff" },
+  { label: "Next.js", slug: "nextdotjs", bg: "#111111", fg: "#ffffff" },
 ];
 
 const CHIP_RADIUS = 14;
@@ -269,7 +263,7 @@ export function Stack(): ReactNode {
 function ChipPill({ chip }: { chip: Chip }): ReactNode {
   return (
     <div
-      className="dark:ring-1 dark:ring-white/15 inline-flex items-center gap-2 p-1 pr-2 text-[15px] font-medium tracking-tight sm:text-[16px]"
+      className="inline-flex items-center gap-2 p-1 pr-2 text-[15px] font-medium tracking-tight sm:text-[16px] dark:ring-1 dark:ring-white/15"
       style={{
         backgroundColor: chip.bg,
         color: chip.fg,

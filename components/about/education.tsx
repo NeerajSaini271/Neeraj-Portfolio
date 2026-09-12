@@ -1,31 +1,8 @@
+import { ExternalLink } from "lucide-react";
+import Image from "next/image";
 import type { ReactNode } from "react";
 
-type Entry = {
-  school: string;
-  degree: string;
-  period: string;
-  slug?: string;
-};
-
-const ENTRIES: Entry[] = [
-  {
-    school: "Rhode Island School of Design",
-    degree: "BFA, Graphic Design",
-    period: "2013 – 2017",
-  },
-  {
-    school: "Stanford University",
-    degree: "HCI Certificate, d.school",
-    period: "2018",
-  },
-  {
-    school: "Bruno Simon's Three.js Journey",
-    degree: "WebGL & Shaders",
-    period: "2022",
-  },
-];
-
-const ROW_HEIGHT = 64;
+const COLLEGE_URL = "https://bkbiet.ac.in/";
 
 export function Education(): ReactNode {
   return (
@@ -33,55 +10,42 @@ export function Education(): ReactNode {
       <h3 className="text-foreground text-[15px] font-semibold tracking-tight">
         Education
       </h3>
-      <div className="border-foreground/5 bg-foreground/2 dark:bg-foreground/5 relative rounded-4xl border p-2 sm:p-4">
-        <ul className="flex flex-col gap-2">
-          {ENTRIES.map((entry) => (
-            <li
-              key={`${entry.school}-${entry.period}`}
-              className="bg-background border-foreground/5 flex items-center gap-4 rounded-3xl border p-2"
-              style={{ minHeight: ROW_HEIGHT }}
-            >
-              <SchoolLogo entry={entry} />
-              <div className="flex min-w-0 flex-col">
-                <span className="text-foreground text-[17px] font-semibold tracking-tight sm:text-[18px]">
-                  {entry.school}
-                </span>
-                <span className="text-foreground/65 mt-0.5 text-[14px] tracking-tight sm:text-[15px]">
-                  {entry.degree}
-                  <span className="text-foreground/30 mx-2">•</span>
-                  <span className="text-foreground/55">{entry.period}</span>
-                </span>
-              </div>
-            </li>
-          ))}
-        </ul>
+      <div className="border-foreground/5 bg-foreground/2 dark:bg-foreground/5 rounded-4xl border p-2 sm:p-4">
+        <a
+          href={COLLEGE_URL}
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Visit the official B K Birla Institute of Engineering & Technology website"
+          className="focus-ring border-foreground/5 bg-background hover:border-foreground/15 hover:bg-foreground/2 group flex items-start gap-4 rounded-3xl border p-4 transition-colors"
+        >
+          <span className="border-foreground/10 inline-flex h-12 w-12 shrink-0 items-center justify-center overflow-hidden rounded-[14px] border bg-white p-1.5">
+            <Image
+              src="/education/bkbiet-logo.svg"
+              alt="B K Birla Institute of Engineering & Technology logo"
+              width={48}
+              height={48}
+              className="h-full w-full object-contain"
+            />
+          </span>
+          <div className="min-w-0 flex-1">
+            <div className="flex items-start justify-between gap-3">
+              <h4 className="text-foreground text-[17px] font-semibold tracking-tight sm:text-[18px]">
+                B K Birla Institute of Engineering & Technology
+              </h4>
+              <ExternalLink
+                aria-hidden="true"
+                className="text-foreground/35 group-hover:text-foreground/60 mt-1 h-4 w-4 shrink-0 transition-colors"
+              />
+            </div>
+            <p className="text-foreground/65 mt-1 text-[14px] leading-relaxed sm:text-[15px]">
+              B.Tech in Computer Science (Data Science)
+            </p>
+            <p className="text-foreground/50 mt-1 text-[13px]">
+              2021 - 2025 · 87.2%
+            </p>
+          </div>
+        </a>
       </div>
     </div>
-  );
-}
-
-function SchoolLogo({ entry }: { entry: Entry }): ReactNode {
-  const initials = entry.school.charAt(0);
-  return (
-    <span
-      className="border-foreground/15 inline-flex h-12 w-12 shrink-0 items-center justify-center border"
-      aria-hidden="true"
-      style={{ borderRadius: 14 }}
-    >
-      {entry.slug ? (
-        <img
-          src={`https://cdn.simpleicons.org/${entry.slug}`}
-          alt=""
-          width={24}
-          height={24}
-          className="h-6 w-6"
-          draggable={false}
-        />
-      ) : (
-        <span className="text-foreground/60 text-[18px] font-semibold tracking-tight">
-          {initials}
-        </span>
-      )}
-    </span>
   );
 }

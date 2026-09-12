@@ -1,32 +1,40 @@
 import type { Metadata } from "next";
 
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000";
+
 export const siteConfig = {
-  name: "Portfolio",
+  name: "Neeraj Kumar Saini",
+  title: "Neeraj Kumar Saini | MERN Stack Developer",
   description:
-    "A modern, accessible portfolio template built with Next.js, Tailwind CSS, and TypeScript.",
-  url: "https://example.com",
+    "MERN Stack Developer building responsive, secure, and scalable web applications with React, Node.js, Express, MongoDB, and modern frontend technologies.",
+  url: siteUrl,
   ogImage: "/og-image.png",
-  creator: "@yourhandle",
+  creator: "Neeraj Kumar Saini",
   authors: [
     {
-      name: "Your Name",
-      url: "https://example.com",
+      name: "Neeraj Kumar Saini",
+      url: "https://github.com/NeerajSaini271",
     },
   ],
   keywords: [
-    "portfolio",
-    "personal site",
-    "Next.js",
-    "React",
-    "Tailwind CSS",
+    "Neeraj Kumar Saini",
+    "MERN Stack Developer",
+    "Full-Stack Developer",
+    "React Developer",
+    "Node.js Developer",
+    "JavaScript",
     "TypeScript",
+    "MongoDB",
+    "Express.js",
+    "Tailwind CSS",
+    "Rajasthan India",
   ],
 } as const;
 
 export const baseMetadata: Metadata = {
   metadataBase: new URL(siteConfig.url),
   title: {
-    default: siteConfig.name,
+    default: siteConfig.title,
     template: `%s | ${siteConfig.name}`,
   },
   description: siteConfig.description,
@@ -45,14 +53,12 @@ export const baseMetadata: Metadata = {
       "max-snippet": -1,
     },
   },
-  alternates: {
-    canonical: "/",
-  },
+  alternates: { canonical: "/" },
   openGraph: {
     type: "website",
-    locale: "en_US",
+    locale: "en_IN",
     url: siteConfig.url,
-    title: siteConfig.name,
+    title: siteConfig.title,
     description: siteConfig.description,
     siteName: siteConfig.name,
     images: [
@@ -60,21 +66,19 @@ export const baseMetadata: Metadata = {
         url: siteConfig.ogImage,
         width: 1200,
         height: 630,
-        alt: siteConfig.name,
+        alt: `${siteConfig.name} portfolio`,
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: siteConfig.name,
+    title: siteConfig.title,
     description: siteConfig.description,
     images: [siteConfig.ogImage],
-    creator: siteConfig.creator,
   },
   icons: {
-    icon: "/favicon.ico",
-    shortcut: "/favicon-16x16.png",
-    apple: "/apple-icon.png",
+    icon: [{ url: "/icon.svg", type: "image/svg+xml" }],
+    apple: "/apple-icon.svg",
   },
   manifest: "/site.webmanifest",
 };
@@ -85,24 +89,24 @@ export function createMetadata({
   path = "/",
   image,
   noIndex = false,
+  absoluteTitle = false,
 }: {
   title?: string;
   description?: string;
   path?: string;
   image?: string;
   noIndex?: boolean;
+  absoluteTitle?: boolean;
 }): Metadata {
   const url = `${siteConfig.url}${path}`;
   const ogImage = image ?? siteConfig.ogImage;
 
   return {
-    title,
+    title: absoluteTitle && title ? { absolute: title } : title,
     description,
-    alternates: {
-      canonical: path,
-    },
+    alternates: { canonical: path },
     openGraph: {
-      title: title ?? siteConfig.name,
+      title: title ?? siteConfig.title,
       description: description ?? siteConfig.description,
       url,
       images: [
@@ -115,15 +119,10 @@ export function createMetadata({
       ],
     },
     twitter: {
-      title: title ?? siteConfig.name,
+      title: title ?? siteConfig.title,
       description: description ?? siteConfig.description,
       images: [ogImage],
     },
-    ...(noIndex && {
-      robots: {
-        index: false,
-        follow: false,
-      },
-    }),
+    ...(noIndex && { robots: { index: false, follow: false } }),
   };
 }

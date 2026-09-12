@@ -24,20 +24,38 @@ export default function AboutPage(): ReactNode {
 
       <section className="mx-auto w-full max-w-160 px-6 pt-20 pb-16 sm:px-10 sm:pt-28 sm:pb-24">
         <FadeIn delay={0.5}>
-          <div className="rounded-4xl border border-foreground/5 bg-foreground/1.5 p-8 sm:p-12 dark:bg-foreground/3">
-            <h1 className="font-serif text-[1.75rem] font-medium tracking-tight text-foreground sm:text-[2rem]">
-              Hello! I&rsquo;m <span className="border-b border-foreground/30 pb-0.5">Josh Mercer</span>.
+          <div className="border-foreground/5 bg-foreground/1.5 dark:bg-foreground/3 rounded-4xl border p-8 sm:p-12">
+            <h1 className="text-foreground font-serif text-[1.75rem] font-medium tracking-tight sm:text-[2rem]">
+              Hello! I&rsquo;m{" "}
+              <span className="border-foreground/30 border-b pb-0.5">
+                Neeraj Kumar Saini
+              </span>
+              .
             </h1>
-            <div className="mt-8 space-y-6 text-[17px] leading-[1.7] tracking-tight text-foreground/75 sm:text-[18px]">
+            <div className="text-foreground/75 mt-8 space-y-6 text-[17px] leading-[1.7] tracking-tight sm:text-[18px]">
               <p>
-                A <strong className="font-semibold text-foreground">product designer and frontend engineer</strong> passionate about building intuitive, human-centered digital experiences. With a background in <strong className="font-semibold text-foreground">visual craft</strong> and <strong className="font-semibold text-foreground">interaction design</strong>, I bring a unique blend of design thinking and technical execution to every project.
+                I am a{" "}
+                <strong className="text-foreground font-semibold">
+                  MERN Stack Developer
+                </strong>{" "}
+                and Computer Science (Data Science) graduate focused on building
+                responsive, secure, and maintainable web applications.
               </p>
               <p>
-                My journey into design began when I realized how often good user experience was missing from powerful tools. That led me to embrace <strong className="font-semibold text-foreground">user-centered design</strong> as both a mindset and a craft, one that balances clarity, creativity, and functionality.
+                My work spans modern React interfaces, Node.js APIs,
+                authentication and role-based access control, relational and
+                document databases, performance improvements, and accessible
+                user experiences.
               </p>
               <p>
-                Currently leading design at small product teams shipping software for <strong className="font-semibold text-foreground">creative professionals</strong>, I&rsquo;m always looking for opportunities to <strong className="font-semibold text-foreground">shape thoughtful interfaces and build scalable design systems</strong>.
+                I am currently working remotely as a{" "}
+                <strong className="text-foreground font-semibold">
+                  MERN Stack Intern at UptoSkills
+                </strong>
+                , contributing to collaborative production projects while
+                continuing to strengthen full-stack engineering skills.
               </p>
+              <p className="text-foreground/60">Based in Rajasthan, India.</p>
             </div>
           </div>
         </FadeIn>

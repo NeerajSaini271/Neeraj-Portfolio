@@ -1,4 +1,18 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="180" height="180" viewBox="0 0 180 180">
-  <rect width="180" height="180" rx="40" fill="#0066FF"/>
-  <path d="M40 60h100M40 90h100M40 120h70" stroke="white" stroke-width="12" stroke-linecap="round"/>
+<svg
+  xmlns="http://www.w3.org/2000/svg"
+  width="180"
+  height="180"
+  viewBox="0 0 180 180"
+  role="img"
+  aria-label="Neeraj Kumar Saini monogram"
+>
+  <rect width="180" height="180" rx="42" fill="#0a0a0a" />
+  <path
+    d="M42 132V48l48 60V48M138 63c-8-11-34-11-34 4 0 18 39 10 39 37 0 21-34 26-46 9"
+    fill="none"
+    stroke="#fff"
+    stroke-width="12"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+  />
 </svg>
