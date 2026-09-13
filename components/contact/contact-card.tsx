@@ -1,4 +1,4 @@
-import { Mail } from "lucide-react";
+import { Github, Mail } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import type { ReactNode } from "react";
@@ -51,6 +51,11 @@ export function ContactCard(): ReactNode {
                     href="https://www.linkedin.com/in/neerajsaini271"
                     label="Neeraj Kumar Saini on LinkedIn"
                     imageSrc="/linkedin.svg"
+                  />
+                  <SocialIcon
+                    href="https://github.com/NeerajSaini271"
+                    label="Neeraj Kumar Saini on GitHub"
+                    lucideIcon={Github}
                   />
                 </div>
                 <div className="flex flex-col items-center gap-1 text-center">

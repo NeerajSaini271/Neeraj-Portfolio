@@ -1,6 +1,7 @@
 import type { MetadataRoute } from "next";
 import { siteConfig } from "@/lib/metadata";
 import { projects } from "@/lib/projects";
+import { professionalContributions } from "@/lib/professional-contributions";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = new URL(siteConfig.url);
@@ -27,7 +28,10 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
   ];
 
-  const projectRoutes: MetadataRoute.Sitemap = projects.map(({ slug }) => ({
+  const projectRoutes: MetadataRoute.Sitemap = [
+    ...projects,
+    ...professionalContributions,
+  ].map(({ slug }) => ({
     url: new URL(`/projects/${slug}`, baseUrl).toString(),
     lastModified,
     changeFrequency: "monthly",

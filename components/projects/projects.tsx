@@ -54,7 +54,7 @@ export function Projects({
           ))}
         </div>
         {viewMoreVisible ? (
-          <div className="mt-12 flex justify-center sm:mt-16">
+          <FadeIn delay={0.3} className="mt-12 flex justify-center sm:mt-16">
             <Link
               href="/projects"
               className="focus-ring group border-foreground/8 bg-background text-foreground hover:bg-foreground/5 inline-flex items-center gap-2 rounded-xl border px-5 py-2.5 text-sm font-medium transition-colors"
@@ -65,7 +65,7 @@ export function Projects({
                 aria-hidden="true"
               />
             </Link>
-          </div>
+          </FadeIn>
         ) : null}
       </div>
     </section>
@@ -138,10 +138,13 @@ function ProjectCard({
         <div className="mt-auto flex flex-wrap gap-2 px-1 pb-2">
           <Link
             href={`/projects/${project.slug}`}
-            className="focus-ring border-foreground/8 text-foreground hover:bg-foreground/5 inline-flex items-center gap-1.5 rounded-lg border px-3 py-2 text-[13px] font-medium transition-colors"
+            className="focus-ring group border-foreground/8 text-foreground hover:bg-foreground/5 inline-flex items-center gap-1.5 rounded-lg border px-3 py-2 text-[13px] font-medium transition-colors"
           >
             View project
-            <ArrowRight className="h-3.5 w-3.5" aria-hidden="true" />
+            <ArrowRight
+              className="h-3.5 w-3.5 transition-transform duration-300 group-hover:translate-x-0.5"
+              aria-hidden="true"
+            />
           </Link>
           <Link
             href={project.liveUrl}

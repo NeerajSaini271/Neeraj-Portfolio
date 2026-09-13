@@ -49,9 +49,12 @@ export function ProjectDetail({
         <FadeIn>
           <Link
             href="/projects"
-            className="focus-ring text-foreground/60 hover:text-foreground inline-flex items-center gap-2 rounded-lg text-sm transition-colors"
+            className="focus-ring group text-foreground/60 hover:text-foreground inline-flex items-center gap-2 rounded-lg text-sm transition-colors"
           >
-            <ArrowLeft className="h-4 w-4" aria-hidden="true" />
+            <ArrowLeft
+              className="h-4 w-4 transition-transform duration-300 group-hover:-translate-x-0.5"
+              aria-hidden="true"
+            />
             Back to projects
           </Link>
           <header className="mt-10 max-w-4xl">

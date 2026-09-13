@@ -1,4 +1,5 @@
 import { ContactCard } from "@/components/contact/contact-card";
+import { ProfessionalContributions } from "@/components/projects/professional-contributions";
 import { Projects } from "@/components/projects/projects";
 import { FadeIn } from "@/components/ui/motion-primitives";
 import { createMetadata } from "@/lib/metadata";
@@ -8,7 +9,7 @@ import type { ReactNode } from "react";
 export const metadata: Metadata = createMetadata({
   title: "Projects",
   description:
-    "Selected full-stack applications and responsive interfaces by Neeraj Kumar Saini.",
+    "Personal projects and verified collaborative internship contributions by Neeraj Kumar Saini.",
   path: "/projects",
 });
 
@@ -21,12 +22,14 @@ export default function ProjectsPage(): ReactNode {
             Selected projects
           </h1>
           <p className="text-foreground/65 max-w-[38ch] text-[20px] leading-[1.4] tracking-tight sm:text-[22px]">
-            Full-stack applications and responsive interfaces built with a focus
-            on usability, reliability, and thoughtful execution.
+            Personal projects and verified collaborative internship
+            contributions spanning frontend, backend, security, reliability, and
+            user experience.
           </p>
         </FadeIn>
       </section>
       <Projects />
+      <ProfessionalContributions />
       <ContactCard />
       <div className="h-12 sm:h-16" />
     </main>
