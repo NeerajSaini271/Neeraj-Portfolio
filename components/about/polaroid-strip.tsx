@@ -5,11 +5,12 @@ import { motion } from "motion/react";
 import type { ReactNode } from "react";
 
 const PHOTOS = [
-  { src: "/neeraj.webp", alt: "Professional portrait", rotate: -4 },
   {
-    src: "/neeraj-hover.webp",
-    alt: "Alternate professional portrait",
-    rotate: 4,
+    id: "primary",
+    src: "/neeraj.webp",
+    alt: "Professional portrait",
+    rotate: -3,
+    imageClassName: "object-cover",
   },
 ] as const;
 
@@ -18,7 +19,7 @@ export function PolaroidStrip(): ReactNode {
     <div className="flex w-full flex-wrap items-start justify-center gap-4 px-4 sm:gap-6 sm:px-8">
       {PHOTOS.map((photo, index) => (
         <motion.figure
-          key={photo.src}
+          key={photo.id}
           initial={{
             opacity: 0,
             y: -80,
@@ -37,7 +38,7 @@ export function PolaroidStrip(): ReactNode {
             delay: index * 0.1,
             ease: [0.22, 1, 0.36, 1],
           }}
-          className="relative aspect-[3/4] w-[clamp(9rem,18vw,13rem)] overflow-hidden rounded-2xl border-[6px] border-neutral-300/40 bg-white p-1.5 shadow-sm dark:border-white/15 dark:bg-neutral-900"
+          className="relative aspect-[3/4] w-[clamp(12rem,24vw,17rem)] transform-gpu overflow-hidden rounded-2xl border-[6px] border-neutral-300/40 bg-white p-1.5 [backface-visibility:hidden] dark:border-white/15 dark:bg-neutral-900"
         >
           <div className="bg-foreground/5 relative h-full w-full overflow-hidden rounded-xl">
             <Image
@@ -45,7 +46,7 @@ export function PolaroidStrip(): ReactNode {
               alt={photo.alt}
               fill
               sizes="220px"
-              className="object-cover"
+              className={photo.imageClassName}
               priority={index === 0}
             />
           </div>

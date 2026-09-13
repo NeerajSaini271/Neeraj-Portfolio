@@ -2,20 +2,18 @@
 import { ArrowRight, FileText } from "lucide-react";
 import { LayoutGroup, motion } from "motion/react";
 import Link from "next/link";
-import { useState } from "react";
 import type { ReactNode } from "react";
 import { ContactButton } from "@/components/contact/contact-button";
 const EASE = [0.22, 1, 0.36, 1] as const;
 export function HeroCtas(): ReactNode {
-  const [contactExpanded, setContactExpanded] = useState(false);
   return (
     <LayoutGroup>
       <motion.div
         layout
         transition={{ layout: { duration: 0.55, ease: EASE } }}
-        className="mt-2 grid min-h-25 grid-cols-[max-content_max-content_max-content] content-start items-center gap-3 max-sm:flex max-sm:flex-wrap"
+        className="mt-2 flex min-h-25 w-max max-w-none flex-wrap content-start items-center gap-3 max-sm:w-full"
       >
-        <ContactButton onExpandedChange={setContactExpanded} />
+        <ContactButton />
         <motion.div
           layout
           transition={{ layout: { duration: 0.55, ease: EASE } }}
@@ -34,11 +32,7 @@ export function HeroCtas(): ReactNode {
         <motion.div
           layout="position"
           transition={{ layout: { duration: 0.55, ease: EASE } }}
-          className={
-            contactExpanded
-              ? "col-start-2 row-start-2 justify-self-end max-sm:basis-full max-sm:justify-self-center"
-              : "col-start-3 row-start-1"
-          }
+          className="max-sm:flex max-sm:basis-full max-sm:justify-center"
         >
           <a
             href="/Neeraj-Kumar-Saini-Resume.pdf"
