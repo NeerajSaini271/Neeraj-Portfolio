@@ -11,7 +11,7 @@ export function HeroCtas(): ReactNode {
       <motion.div
         layout
         transition={{ layout: { duration: 0.55, ease: EASE } }}
-        className="mt-2 flex min-h-25 w-max max-w-none flex-wrap content-start items-center gap-3 max-sm:w-full"
+        className="mt-2 flex min-h-25 w-max max-w-none flex-wrap content-start items-center gap-3 max-sm:grid max-sm:grid-cols-[max-content_max-content]"
       >
         <ContactButton />
         <motion.div
@@ -32,7 +32,7 @@ export function HeroCtas(): ReactNode {
         <motion.div
           layout="position"
           transition={{ layout: { duration: 0.55, ease: EASE } }}
-          className="max-sm:flex max-sm:basis-full max-sm:justify-center"
+          className="max-sm:col-span-2 max-sm:flex max-sm:justify-center"
         >
           <a
             href="/Neeraj-Kumar-Saini-Resume.pdf"
