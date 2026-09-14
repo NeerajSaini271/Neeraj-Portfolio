@@ -1,5 +1,6 @@
-import { ArrowLeft, ExternalLink, Github, Server } from "lucide-react";
+import { ArrowLeft, ExternalLink, Server } from "lucide-react";
 import Image from "next/image";
+import { GitHubIcon } from "@/components/ui/github-icon";
 import Link from "next/link";
 import type { ReactNode } from "react";
 import { ContactCard } from "@/components/contact/contact-card";
@@ -95,7 +96,7 @@ export function ProjectDetail({
               className="focus-ring border-foreground/8 hover:bg-foreground/5 inline-flex items-center gap-2 rounded-xl border px-4 py-2.5 text-sm font-medium transition-colors"
             >
               Source
-              <Github className="h-4 w-4" aria-hidden="true" />
+              <GitHubIcon className="h-4 w-4" />
             </Link>
             {project.apiUrl ? (
               <Link

@@ -1,11 +1,6 @@
-import {
-  ArrowRight,
-  Building2,
-  GitFork,
-  Github,
-  GitPullRequest,
-} from "lucide-react";
+import { ArrowRight, Building2, GitFork, GitPullRequest } from "lucide-react";
 import Image from "next/image";
+import { GitHubIcon } from "@/components/ui/github-icon";
 import Link from "next/link";
 import type { ComponentType, ReactNode } from "react";
 import { FadeIn } from "@/components/ui/motion-primitives";
@@ -149,7 +144,7 @@ export function ProfessionalContributions(): ReactNode {
                   <ActionLink
                     href={item.originalUrl}
                     label="Original project"
-                    icon={Github}
+                    icon={GitHubIcon}
                   />
                   <ActionLink
                     href={item.forkUrl}
@@ -169,7 +164,7 @@ export function ProfessionalContributions(): ReactNode {
             className="focus-ring border-foreground/8 bg-background text-foreground hover:bg-foreground/5 inline-flex items-center gap-2 rounded-xl border px-5 py-2.5 text-sm font-medium transition-colors"
           >
             View GitHub profile
-            <Github className="h-4 w-4" aria-hidden="true" />
+            <GitHubIcon className="h-4 w-4" />
           </Link>
           <Link
             href="/about"

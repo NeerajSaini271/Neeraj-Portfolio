@@ -1,4 +1,4 @@
-import { Github, Mail } from "lucide-react";
+import { Mail } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import type { ReactNode } from "react";
@@ -41,7 +41,7 @@ export function ContactCard(): ReactNode {
               </div>
 
               <div className="border-foreground/8 bg-background flex flex-col items-center justify-center gap-6 rounded-[1.1rem] border p-6 sm:p-8">
-                <div className="flex items-center gap-3 opacity-75">
+                <div className="flex items-center gap-3">
                   <SocialIcon
                     href="mailto:neerajkhetrisaini@gmail.com"
                     label="Email"
@@ -55,7 +55,8 @@ export function ContactCard(): ReactNode {
                   <SocialIcon
                     href="https://github.com/NeerajSaini271"
                     label="Neeraj Kumar Saini on GitHub"
-                    lucideIcon={Github}
+                    imageSrc="/github.svg"
+                    imageSize={18}
                   />
                 </div>
                 <div className="flex flex-col items-center gap-1 text-center">
@@ -80,6 +81,7 @@ function SocialIcon({
   label,
   lucideIcon: LucideIcon,
   imageSrc,
+  imageSize = 14,
 }: {
   href: string;
   label: string;
@@ -88,6 +90,7 @@ function SocialIcon({
     strokeWidth?: number;
   }>;
   imageSrc?: string;
+  imageSize?: number;
 }): ReactNode {
   const isExternal = href.startsWith("http");
   const props = isExternal
@@ -97,7 +100,7 @@ function SocialIcon({
     <Link
       href={href}
       aria-label={label}
-      className="border-foreground/8 hover:border-foreground/15 focus-ring bg-background text-foreground/70 hover:text-foreground inline-flex h-11 w-11 items-center justify-center rounded-xl border transition-colors"
+      className="border-foreground/8 hover:border-foreground/15 focus-ring group bg-background text-foreground/70 hover:text-foreground inline-flex h-11 w-11 items-center justify-center rounded-xl border transition-colors"
       {...props}
     >
       {LucideIcon ? (
@@ -106,10 +109,10 @@ function SocialIcon({
         <Image
           src={imageSrc}
           alt=""
-          width={14}
-          height={14}
+          width={imageSize}
+          height={imageSize}
           aria-hidden="true"
-          className="max-h-[14px] max-w-[14px] object-contain dark:invert"
+          className="object-contain opacity-70 transition-opacity group-hover:opacity-100 dark:invert"
         />
       ) : null}
     </Link>

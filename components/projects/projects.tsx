@@ -2,7 +2,6 @@ import {
   ArrowRight,
   CheckSquare2,
   ExternalLink,
-  Github,
   Headphones,
   KeyRound,
   LayoutTemplate,
@@ -11,6 +10,7 @@ import {
   Radio,
 } from "lucide-react";
 import Image from "next/image";
+import { GitHubIcon } from "@/components/ui/github-icon";
 import Link from "next/link";
 import type { ComponentType, ReactNode } from "react";
 import { FadeIn } from "@/components/ui/motion-primitives";
@@ -162,7 +162,7 @@ function ProjectCard({
             className="focus-ring border-foreground/8 text-foreground hover:bg-foreground/5 inline-flex items-center gap-1.5 rounded-lg border px-3 py-2 text-[13px] font-medium transition-colors"
           >
             Source
-            <Github className="h-3.5 w-3.5" aria-hidden="true" />
+            <GitHubIcon className="h-3.5 w-3.5" />
           </Link>
         </div>
       </article>

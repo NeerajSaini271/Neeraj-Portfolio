@@ -1,5 +1,6 @@
-import { ArrowLeft, GitFork, Github, GitPullRequest } from "lucide-react";
+import { ArrowLeft, GitFork, GitPullRequest } from "lucide-react";
 import Image from "next/image";
+import { GitHubIcon } from "@/components/ui/github-icon";
 import Link from "next/link";
 import type { ReactNode } from "react";
 import { ContactCard } from "@/components/contact/contact-card";
@@ -41,7 +42,7 @@ function ExternalAction({
 }: {
   href: string;
   label: string;
-  icon: typeof Github;
+  icon: React.ComponentType<{ className?: string }>;
   primary?: boolean;
 }): ReactNode {
   return (
@@ -115,7 +116,7 @@ export function ProfessionalContributionDetail({
             <ExternalAction
               href={contribution.originalUrl}
               label="Original project"
-              icon={Github}
+              icon={GitHubIcon}
             />
             <ExternalAction
               href={contribution.forkUrl}

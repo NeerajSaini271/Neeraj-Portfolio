@@ -17,7 +17,7 @@ const CHIPS: Chip[] = [
   { label: "React", slug: "react", bg: "#149ECA", fg: "#ffffff" },
   { label: "Node.js", slug: "nodedotjs", bg: "#3C873A", fg: "#ffffff" },
   { label: "JavaScript", slug: "javascript", bg: "#F7DF1E", fg: "#111111" },
-  { label: "TypeScript", slug: "typescript", bg: "#3178C6", fg: "#ffffff" },
+  { label: "Python", slug: "python", bg: "#3776AB", fg: "#ffffff" },
   { label: "PostgreSQL", slug: "postgresql", bg: "#336791", fg: "#ffffff" },
   { label: "Tailwind CSS", slug: "tailwindcss", bg: "#0F8FA9", fg: "#ffffff" },
   { label: "GitHub", slug: "github", bg: "#181717", fg: "#ffffff" },
